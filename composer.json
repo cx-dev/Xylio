@@ -1,0 +1,25 @@
+{
+    "name": "cx-dev/xylio",
+    "type": "library",
+    "description": "PHP FrameworkOOP library",
+    "license": "MIT",
+    "keywords": ["code_x","developer","Xylio","oXylio code_x"],
+    "homepage": "https://github.com/cx-dev/Xylio",
+    "authors": [
+        {
+            "name": "Bartosz Zwierzchowski",
+            "email": "cx-dev@pro-grom.eu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xylio": "src/"
+        }
+    }
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    }
+}
