@@ -15,7 +15,12 @@
         "psr-4": {
             "Xylio": "src/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "": "test/"
+        }
+    },
     "require": {
         "php": ">=7.0.0"
     },
