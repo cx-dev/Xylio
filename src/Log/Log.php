@@ -11,12 +11,12 @@ namespace Xylio\Log;
 use DateTime;
 use RuntimeException;
 use InvalidArgumentException;
-use Xylio\Filter;
+use Xylio\Filtr;
 
 class Log implements LogInterface
 {
     const FILE_EXT = '.log';
-    const FILE_DIR = APP_DIR . "/cache/logs/";
+    const FILE_DIR = RES_DIR . "/logs/";
 
     /**
      * app envirnoment singeleton
@@ -78,7 +78,7 @@ class Log implements LogInterface
             touch($f_path);
         }
 
-        $log_message = '[' . date('Y-m-d') . ' ('. date('H:i:s') . ')] < '. $level .' >  "'. Filter::utf8($message).'".'.PHP_EOL;
+        $log_message = '[' . date('Y-m-d') . ' ('. date('H:i:s') . ')] < '. $level .' >  "'. Filtr::utf8($message).'".'.PHP_EOL;
         file_put_contents($f_path, $log_message, FILE_APPEND);
     }
 
@@ -175,6 +175,10 @@ class Log implements LogInterface
      */
     public function info($message, array $context = array()) {
         $this->log(LogLevel::INFO, $message, array( $context = array()));
+    }
+
+    public static function add($loglevel, $message, array $context = array()) {
+        static::log($loglevel, $message, $context);
     }
 
     /**

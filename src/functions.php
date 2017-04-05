@@ -8,22 +8,19 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
-if (!function_exists('_print')) {
-    function _print($content)
+if (!function_exists('view')) {
+    function view($content)
     {
-        if (is_array($content) or is_object($content)) {
-            print ("<pre>");
-            print_r($content);
-            print ("</pre>");
-        } else {
-            print ($content);
-        }
-    }
-} // end_of_if
+        print ("<pre>");
 
-if (!function_exists('self_exists')) {
-    function self_localize()
-    {
-        echo dirname(__FILE__);
+        if (is_array($content)) {
+            print_r($content);
+        } elseif (is_object($content)) {
+            var_dump($content);
+        } else {
+            echo $content;
+        }
+
+        print ("</pre>");
     }
-} // end_of_if
+}

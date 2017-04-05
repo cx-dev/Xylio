@@ -13,6 +13,6 @@ namespace Xylio\HttpKernel;
 class Kernel implements TerminableInterface
 {
     public function terminate($request = null, $response = null) {
-        print "hello";
+
     }
 }
