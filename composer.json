@@ -13,12 +13,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Xylio": "src/"
+            "Xylio\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Xylio\\": "test/"
+            "": "test/"
         }
     },
     "require": {
